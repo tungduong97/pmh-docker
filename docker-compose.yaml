@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  griddb1:
+    container_name: docker1
+    image: griddb:V45
+    network_mode: "bridge"
+    environment:
+      - GRIDDB_NODE_NUM
+    volumes:
+      - "vol1:/var/lib/gridstore"
+  griddb2:
+    container_name: docker2
+    image: griddb:V45
+    network_mode: "bridge"
+    environment:
+      - GRIDDB_NODE_NUM
+    volumes:
+      - "vol2:/var/lib/gridstore"
+
+  griddb3:
+    container_name: docker3
+    image: griddb:V45
+    network_mode: "bridge"
+    environment:
+      - GRIDDB_NODE_NUM
+    volumes:
+      - "vol3:/var/lib/gridstore"
+
+volumes:
+    vol1:
+    vol2:
+    vol3:
